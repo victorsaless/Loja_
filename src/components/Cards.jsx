@@ -56,7 +56,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({ onFavorite }) {
+export default function RecipeReviewCard() {
   const [infoCards, setInfoCards] = useState([]);
   const [expanded, setExpanded] = useState({});
   const [favorites, setFavorites] = useState([]);
@@ -96,8 +96,7 @@ export default function RecipeReviewCard({ onFavorite }) {
 
       setFavorites((prevFavorites) => [...prevFavorites, id]);
 
-      const favoritedCard = infoCards.find((card) => card._id === id);
-      onFavorite(favoritedCard);
+      infoCards.find((card) => card._id === id);
     } catch (error) {
       console.error('Erro ao favoritar:', error);
     }
